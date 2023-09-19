@@ -1,0 +1,8 @@
+Django==4.2.5
+Pillow==10.0.1
+environs==9.5.0
+livereload==2.6.3
+django-admin-sortable2==2.1.9
+django-tinymce==3.6.1
+python-slugify==8.0.1
+dj-database-url==2.1.0

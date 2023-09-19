@@ -119,8 +119,8 @@ class Ingredient(models.Model):
         max_length=15, choices=units, verbose_name='ед. изм.')
 
     class Meta:
-        verbose_name = 'ингредиент'
-        verbose_name_plural = 'ингредиенты'
+        verbose_name = 'состав'
+        verbose_name_plural = 'состав'
 
     def __str__(self):
         return f'{self.dish}: {self.cooking_product} ({self.quantity} {self.measure_unit})'

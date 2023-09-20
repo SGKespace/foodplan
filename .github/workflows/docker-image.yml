@@ -16,4 +16,4 @@ jobs:
       env:
         DEBUG: True
         SECRET_KEY: 12345
-        ALLOWED_HOSTS: 82.148.28.201  # тут поставлю как подниму новый сервак нужное значение
+        ALLOWED_HOSTS: 77.223.98.104 

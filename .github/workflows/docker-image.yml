@@ -12,7 +12,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: build and run
-      run: docker-compose up -d --build
+     
+      run: docker build . --file Dockerfile --tag food:$(date +%s)
       env:
         DEBUG: True
         SECRET_KEY: 12345

@@ -1,8 +1,9 @@
-# Container image that runs your code
-FROM alpine:3.10
-
-# Copies your code file from your action repository to the filesystem path `/` of the container
-COPY entrypoint.sh /entrypoint.sh
-
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["/entrypoint.sh"]
+FROM python:3.10-slim-buster
+WORKDIR /opt/app
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+COPY . /opt/app
+RUN python manage.py migrate
+RUN python manage.py loaddata demo-data --format JSON
+RUN python manage.py initadmin
+CMD [ "python", "./manage.py", "runserver"]

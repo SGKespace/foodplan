@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'cart',
     'orders',
     'coupons',
-    'tg_bot',
 ]
 
 MIDDLEWARE = [
@@ -138,6 +137,3 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 CART_SESSION_ID = 'cart'
-
-TG_BOT_TOKEN = env.str('TG_BOT_TOKEN')
-

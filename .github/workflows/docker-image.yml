@@ -7,12 +7,13 @@ on:
     branches: [ "master" ]
 
 jobs:
-
   build:
-
-    runs-on: ubuntu-latest
-
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: build and run
+      run: docker-compose up -d --build
+      env:
+        DEBUG: True
+        SECRET_KEY: 12345
+        ALLOWED_HOSTS: 82.148.28.201  # тут поставлю как подниму новый сервак нужное значение

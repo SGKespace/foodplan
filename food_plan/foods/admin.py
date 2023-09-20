@@ -12,7 +12,7 @@ class FoodIntoleranceAdmin(admin.ModelAdmin):
 
 @admin.register(Dish)
 class DishAdmin(admin.ModelAdmin):
-    list_display = ['name', 'slug', 'dish_image', 'dish_type',
+    list_display = ['name', 'slogan', 'slug', 'dish_image', 'dish_type',
                     'mealtime', 'cooking_time',  'calories',
                     'proteins', 'fats', 'carbohydrates',
                     ]
@@ -21,7 +21,7 @@ class DishAdmin(admin.ModelAdmin):
     readonly_fields = ['created_at', 'updated_at']
     fieldsets = [
         (None, {'fields': [
-            ('name', 'slug'),
+            ('name', 'slogan', 'slug'),
             ('dish_type', 'mealtime'),
             'cooking_time', 'dish_image'
         ]}),

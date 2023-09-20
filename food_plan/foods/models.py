@@ -21,6 +21,8 @@ class Dish(models.Model):
     """Описание блюда"""
     name = models.CharField(
         max_length=255, verbose_name='название')
+    slogan = models.CharField(
+        max_length=255, verbose_name='слоган', null=True)
     slug = models.SlugField(
         max_length=100, unique=True,
         verbose_name='slug')

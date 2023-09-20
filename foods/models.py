@@ -2,6 +2,7 @@ from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.urls import reverse
 from tinymce.models import HTMLField
+from django.conf import settings
 
 
 # Create your models here.
@@ -53,7 +54,6 @@ class Dish(models.Model):
     calories = models.PositiveIntegerField(verbose_name='калории, ккал', default=0)
     cooking_time = models.PositiveIntegerField(verbose_name='время приготовления, мин')
     dish_image = models.ImageField(
-        upload_to='dishes/',
         verbose_name='изображение',
         blank=True)
     is_active = models.BooleanField(
